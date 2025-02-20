@@ -1,6 +1,10 @@
 # https://github.com/isathecatgirl/kursbericht
 
-import random
+import random, time
+
+class Lehrer:
+    def erklaeren(_):
+        pass
 
 class Schuelerli:
     def __init__(self, name):
@@ -10,13 +14,31 @@ class Schuelerli:
     def abwaehlen(schuelerli):
         schuelerli.in_kurs = False
 
-    def unterricht_besuchen(_):
-        pass
+    def unterricht_besuchen(schuelerli):
+        print(schuelerli.name + " ist da")
 
+bernd = Lehrer()
 
+# TODO: make this look nicer / remove?
+max = Schuelerli("Max")
+max.abwaehlen()
+jan = Schuelerli("Jan")
+jan.abwaehlen()
 carolin = Schuelerli("Carolin")
 carolin.abwaehlen()
 
-memmer = Schuelerli("Elias")
-if (random.randint(1, 10) == 10):
-    memmer.unterricht_besuchen()
+# Needs approval; TODO: do async if not too disgusting?
+wand_reihe = [
+    Schuelerli("Janis"),
+    Schuelerli("Andreas"),
+    Schuelerli("Joel"),
+    Schuelerli("Elias")
+]
+
+for schuelerli in wand_reihe:
+    if schuelerli.name == "Elias" and random.randint(1, 10) > 9:
+        continue
+
+    time.sleep(random.randint(180, 420))
+    schuelerli.unterricht_besuchen()
+    
