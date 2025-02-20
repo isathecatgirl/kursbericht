@@ -36,7 +36,7 @@ wand_reihe = [
 ]
 
 for schuelerli in wand_reihe:
-    if schuelerli.name == "Elias" and random.randint(1, 10) > 9:
+    if schuelerli.name == "Elias" and random.randint(1, 10) < 10:
         continue
 
     time.sleep(random.randint(180, 420))
