@@ -33,7 +33,7 @@ abwaehler = [
 for schuelerli in abwaehler:
     schuelerli.move(ziele["aus dem Kurs"])
 
-# Needs approval; TODO: do async if not too disgusting?
+# Needs approval
 wandreihe = [
     Schuelerli("Janis"),
     Schuelerli("Andreas"),
