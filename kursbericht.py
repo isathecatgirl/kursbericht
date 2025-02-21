@@ -24,17 +24,32 @@ bernd = Lehrer()
 
 # Too repetitive?
 # TODO: make this look nicer / remove?
-abwaehler = [
+""" abwaehler = [
     Schuelerli("Max"),
     Schuelerli("Jan"),
     Schuelerli("Carolin")
 ]
 
 for schuelerli in abwaehler:
-    schuelerli.move(ziele["aus dem Kurs"])
+    schuelerli.move(ziele["aus dem Kurs"]) """
+
+# better alternative to the one above?
+Schuelerli("Max").move(ziele["aus dem Kurs"])
+Schuelerli("Jan").move(ziele["aus dem Kurs"])
+Schuelerli("Carolin").move(ziele["aus dem Kurs"])
+
+# stuff happens here, example only
+isa = Schuelerli("Isabelle")
+isa.move(ziele["in den Unterricht"])
+johannes = Schuelerli("Johannes")
+johannes.move(ziele["in den Unterricht"])
+david = Schuelerli("David")
+david.move(ziele["in den Unterricht"])
+
+bernd.erklaeren()
 
 # Needs approval
-wandreihe = [
+""" wandreihe = [
     Schuelerli("Janis"),
     Schuelerli("Andreas"),
     Schuelerli("Joel"),
@@ -46,4 +61,15 @@ for schuelerli in wandreihe:
         continue
 
     time.sleep(random.randint(180, 420))
-    schuelerli.move(ziele["in den Unterricht"])
+    schuelerli.move(ziele["in den Unterricht"]) """
+
+# better to understand and looks nicer I think
+time.sleep(random.randint(180, 420))
+
+Schuelerli("Janis").move(ziele["in den Unterricht"])
+Schuelerli("Andreas").move(ziele["in den Unterricht"])
+Schuelerli("Joel").move(ziele["in den Unterricht"])
+
+memmer = Schuelerli("Elias")
+if random.randint(1, 10) == 10:
+    memmer.move(ziele["in den Unterricht"])
