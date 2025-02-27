@@ -3,73 +3,90 @@
 import random, time
 
 class Lehrer:
-    def erklaeren(_):
+    def begruessen(self, schuelerli):
+        print("Hallo " + schuelerli.name)
+
+    def erklaeren(self):
         pass
 
-ziele = {
-    "aus dem Kurs": 0,
-    "in den Unterricht": 1
-}
+    def frage_stellen(self):
+        pass
+
+    def aufrufen(self, schuelerli):
+        print(schuelerli.name)
+
+bernd = Lehrer()
+Schuelerlis = []
 
 class Schuelerli:
     def __init__(self, name):
         self.name = name
         self.in_kurs = True
+        Schuelerlis.append(self)
 
-    def move(schuelerli, ziel):
-        if (ziel == ziele["aus dem Kurs"]):
-            schuelerli.in_kurs = False
+    def move(self, ziel):
+        if (ziel == "aus dem Kurs"):
+            self.in_kurs = False
+            Schuelerlis.remove(self)
+        elif (ziel == "in den Unterricht"):
+            bernd.begruessen(self)
 
-bernd = Lehrer()
+    def aktion(self, aktion):
+        pass
 
-# Too repetitive?
-# TODO: make this look nicer / remove?
-""" abwaehler = [
-    Schuelerli("Max"),
-    Schuelerli("Jan"),
-    Schuelerli("Carolin")
-]
+# todo: implement Lehrer.weinen()
+Schuelerli("Max").move("aus dem Kurs")
+Schuelerli("Jan").move("aus dem Kurs")
+Schuelerli("Carolin").move("aus dem Kurs")
 
-for schuelerli in abwaehler:
-    schuelerli.move(ziele["aus dem Kurs"]) """
-
-# better alternative to the one above?
-Schuelerli("Max").move(ziele["aus dem Kurs"])
-Schuelerli("Jan").move(ziele["aus dem Kurs"])
-Schuelerli("Carolin").move(ziele["aus dem Kurs"])
-
-# stuff happens here, example only
-isa = Schuelerli("Isabelle")
-isa.move(ziele["in den Unterricht"])
-johannes = Schuelerli("Johannes")
-johannes.move(ziele["in den Unterricht"])
+# "Die Profis"
 david = Schuelerli("David")
-david.move(ziele["in den Unterricht"])
+david.move("in den Unterricht")
+johannes = Schuelerli("Johannes")
+johannes.move("in den Unterricht")
+isa = Schuelerli("Isabelle")
+isa.move("in den Unterricht")
+
+# Unterricht startet
+bernd.erklaeren()
+
+# "Die Mittelguten"
+nele = Schuelerli("Nele")
+nele.move("in den Unterricht")
+chiara = Schuelerli("Chiara")
+chiara.move("in den Unterricht")
 
 bernd.erklaeren()
 
-# Needs approval
-""" wandreihe = [
-    Schuelerli("Janis"),
-    Schuelerli("Andreas"),
-    Schuelerli("Joel"),
-    Schuelerli("Elias")
-]
+nele.aktion("schwätzen")
+chiara.aktion("schwätzen")
+isa.aktion("nicht aufpassen")
 
-for schuelerli in wandreihe:
-    if schuelerli.name == "Elias" and random.randint(1, 10) > 9:
-        continue
-
-    time.sleep(random.randint(180, 420))
-    schuelerli.move(ziele["in den Unterricht"]) """
-
-# better to understand and looks nicer I think
+# "Die Wandreihe"
 time.sleep(random.randint(180, 420))
 
-Schuelerli("Janis").move(ziele["in den Unterricht"])
-Schuelerli("Andreas").move(ziele["in den Unterricht"])
-Schuelerli("Joel").move(ziele["in den Unterricht"])
+Schuelerli("Janis").move("in den Unterricht")
+Schuelerli("Andreas").move("in den Unterricht")
+Schuelerli("Joel").move("in den Unterricht")
 
-memmer = Schuelerli("Elias")
 if random.randint(1, 10) == 10:
-    memmer.move(ziele["in den Unterricht"])
+    memmer = Schuelerli("Elias")
+    memmer.move("in den Unterricht")
+
+david.aktion("frage stellen")
+bernd.erklaeren()
+johannes.aktion("zusatzinfo geben")
+
+bernd.frage_stellen()
+
+auswahl = random.randint(0, 2)
+if (auswahl == 0):
+    david.aktion("frage beantworten")
+elif (auswahl == 1):
+    johannes.aktion("frage beantworten")
+else:
+    ziel = random.choice(Schuelerlis[5:])
+    bernd.aufrufen(ziel)
+    ziel.aktion("schweigen")
+
+    david.aktion("frage beantworten")
