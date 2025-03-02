@@ -11,12 +11,12 @@ class Lehrer:
         if (erklärung == 1):
             print("Ich habe euch was auf moodle hochgeladen")
         elif (erklärung == 2):
-            print("Öffnet Inf-Schule bei Kapitel " + random.randInt(1, 15))
+            print("Öffnet Inf-Schule bei Kapitel " + str(random.randint(1, 15)))
         else:
             print("Schaut mal kurz nach vorne")
             
-        if (random.randint(1, 250) == 250):
-            isa.aktion("Vom Stuhl fallen")
+        if (random.randint(1, 256) == 16):
+            isa.aktion("fällt vom Stuhl")
             
     def frage_stellen(self):
         fragen = [
@@ -27,7 +27,10 @@ class Lehrer:
         print(random.choice(fragen))
 
     def aufrufen(self, schuelerli):
-        print(schuelrli.name + " versuchs mal")
+        print(schuelerli.name + " versuchs mal")
+    
+    def UnterrichtBeenden(self):
+        print("Schöner Tag noch, Tschüss")
 
 bernd = Lehrer()
 Schuelerlis = []
@@ -77,7 +80,7 @@ chiara.aktion("schwätzt")
 isa.aktion("passt nicht auf")
 
 # "Die Wandreihe"
-time.sleep(random.randint(180, 420))
+time.sleep(random.randint(128, 512))
 
 Schuelerli("Janis").move("in den Unterricht")
 Schuelerli("Andreas").move("in den Unterricht")
@@ -90,7 +93,8 @@ if random.randint(1, 10) == 10:
 david.aktion("stellt eine Frage")
 bernd.erklaeren()
 johannes.aktion("gibt Zusatzinfos")
-
+# Stillarbeit
+time.sleep(32)
 bernd.frage_stellen()
 
 auswahl = random.randint(0, 2)
@@ -104,3 +108,5 @@ else:
     ziel.aktion("schweigt")
 
     david.aktion("beantwortet die Frage")
+
+bernd.UnterrichtBeenden()
