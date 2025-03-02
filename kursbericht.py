@@ -46,7 +46,7 @@ class Schuelerli:
             bernd.begruessen(self)
 
     def aktion(self, aktion):
-        pass
+        print(self.name + aktion)
 
 # todo: implement Lehrer.weinen()
 Schuelerli("Max").move("aus dem Kurs")
