@@ -31,7 +31,7 @@ class Lehrer:
     
     def unterricht_beenden(self):
         print("Schöner Tag noch, Tschüss")
-
+ 
 bernd = Lehrer()
 Schuelerlis = []
 
