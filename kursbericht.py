@@ -27,7 +27,7 @@ class Lehrer:
         print(random.choice(fragen))
 
     def aufrufen(self, schuelerli):
-        pass
+        print(schuelrli.name + " versuchs mal")
 
 bernd = Lehrer()
 Schuelerlis = []
