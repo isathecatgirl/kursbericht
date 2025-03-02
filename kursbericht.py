@@ -93,6 +93,7 @@ if random.randint(1, 10) == 10:
 david.aktion("stellt eine Frage")
 bernd.erklaeren()
 johannes.aktion("gibt Zusatzinfos")
+
 # Stillarbeit
 time.sleep(32)
 bernd.frage_stellen()
@@ -109,4 +110,6 @@ else:
 
     david.aktion("beantwortet die Frage")
 
+# Glocke ertönt
+time.sleep(128)
 bernd.unterricht_beenden()
