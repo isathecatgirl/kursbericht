@@ -7,20 +7,22 @@ class Lehrer:
         print("Hallo " + schuelerli.name)
 
     def erklaeren(self):
-        erklärung = random.randint(1,5)
-        if(erklärung == 1):
+        erklärung = random.randint(1, 5)
+        if (erklärung == 1):
             print("Ich habe euch was auf moodle hochgeladen")
-        elif(erklärung == 2):
-            print("Öffnet Inf-Schule bei Kapitel x")
-        elif(erklärung >= 3):
+        elif (erklärung == 2):
+            print("Öffnet Inf-Schule bei Kapitel " + random.randInt(1, 15))
+        else:
             print("Schaut mal kurz nach vorne")
-        if(random.randint(1,250) == 231):
+            
+        if (random.randint(1, 250) == 250):
             isa.aktion("Vom Stuhl fallen")
+            
     def frage_stellen(self):
         pass
 
     def aufrufen(self, schuelerli):
-        print(schuelerli.name)
+        pass
 
 bernd = Lehrer()
 Schuelerlis = []
