@@ -19,13 +19,12 @@ class Lehrer:
             isa.aktion("Vom Stuhl fallen")
             
     def frage_stellen(self):
-        erklärung = random.randint(1, 4)
-        if (erklärung == 1):
-            print("Was ist das Ziel von Komunikation?")
-        elif (erklärung == 2):
-            print("Was sind die Anforderungen an Datenbanken?")
-        else:
-            print("Was ist ein guter Programmierstil?")
+        fragen = [
+            "Was ist das Ziel von Komunikation?",
+            "Was sind die Anforderungen an Datenbanken?",
+            "Was ist ein guter Programmierstil?"
+        ]
+        print(random.choice(fragen))
 
     def aufrufen(self, schuelerli):
         pass
