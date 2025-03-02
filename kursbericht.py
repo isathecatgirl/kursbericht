@@ -29,7 +29,7 @@ class Lehrer:
     def aufrufen(self, schuelerli):
         print(schuelerli.name + " versuchs mal")
     
-    def UnterrichtBeenden(self):
+    def unterricht_beenden(self):
         print("Schöner Tag noch, Tschüss")
 
 bernd = Lehrer()
@@ -109,4 +109,4 @@ else:
 
     david.aktion("beantwortet die Frage")
 
-bernd.UnterrichtBeenden()
+bernd.unterricht_beenden()
