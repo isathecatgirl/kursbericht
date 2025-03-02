@@ -46,7 +46,7 @@ class Schuelerli:
             bernd.begruessen(self)
 
     def aktion(self, aktion):
-        print(self.name + aktion)
+        print(self.name + " " + aktion)
 
 # todo: implement Lehrer.weinen()
 Schuelerli("Max").move("aus dem Kurs")
@@ -72,9 +72,9 @@ chiara.move("in den Unterricht")
 
 bernd.erklaeren()
 
-nele.aktion("schwätzen")
-chiara.aktion("schwätzen")
-isa.aktion("nicht aufpassen")
+nele.aktion("schwätzt")
+chiara.aktion("schwätzt")
+isa.aktion("passt nicht auf")
 
 # "Die Wandreihe"
 time.sleep(random.randint(180, 420))
@@ -87,20 +87,20 @@ if random.randint(1, 10) == 10:
     memmer = Schuelerli("Elias")
     memmer.move("in den Unterricht")
 
-david.aktion("frage stellen")
+david.aktion("stellt eine Frage")
 bernd.erklaeren()
-johannes.aktion("zusatzinfo geben")
+johannes.aktion("gibt Zusatzinfos")
 
 bernd.frage_stellen()
 
 auswahl = random.randint(0, 2)
 if (auswahl == 0):
-    david.aktion("frage beantworten")
+    david.aktion("beantwortet die Frage")
 elif (auswahl == 1):
-    johannes.aktion("frage beantworten")
+    johannes.aktion("beantwortet die Frage")
 else:
     ziel = random.choice(Schuelerlis[5:])
     bernd.aufrufen(ziel)
-    ziel.aktion("schweigen")
+    ziel.aktion("schweigt")
 
-    david.aktion("frage beantworten")
+    david.aktion("beantwortet die Frage")
